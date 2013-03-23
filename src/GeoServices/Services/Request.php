@@ -93,6 +93,16 @@ class Request
         return $this;
     }
 
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    public function getLong()
+    {
+        return $this->long;
+    }
+
     public function getState()
     {
         return $this->state;
