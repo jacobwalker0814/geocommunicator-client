@@ -1,8 +1,8 @@
 <?php
 
-namespace GeoServices\Services;
+namespace GeoServices\Convertors;
 
-class Converter
+class PHPExcel
 {
     public function convert($file, $startingRow=1)
     {
