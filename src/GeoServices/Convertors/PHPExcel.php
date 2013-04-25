@@ -2,6 +2,8 @@
 
 namespace GeoServices\Convertors;
 
+use GeoServices\Services\Request as Request;
+
 class PHPExcel
 {
     public function convert($file, $startingRow=1)
