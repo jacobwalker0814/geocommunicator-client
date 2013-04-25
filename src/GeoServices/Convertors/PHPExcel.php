@@ -6,7 +6,6 @@ class PHPExcel
 {
     public function convert($file, $startingRow=1)
     {
-        $file = '/tmp/foobar.xls'; // TODO this is for testing
         $objPHPExcel = \PHPExcel_IOFactory::load($file);
         $sheet = $objPHPExcel->setActiveSheetIndex(0);
 
