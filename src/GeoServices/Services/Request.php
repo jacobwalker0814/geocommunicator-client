@@ -22,7 +22,7 @@ class Request
     private $townshipDirection;
     private $rangeNumber;
     private $rangeFraction;
-    private $rangeDireciton;
+    private $rangeDirection;
     private $section;
     private $townshipDuplicate;
 
@@ -57,7 +57,7 @@ class Request
             $this->setTownshipDirection($data[4]);
             $this->setRangeNumber($data[5]);
             $this->setRangeFraction($data[6]);
-            $this->setRangeDireciton($data[7]);
+            $this->setRangeDirection($data[7]);
             $this->setSection($data[8]);
             $this->setTownshipDuplicate($data[9]);
         } else {
@@ -187,14 +187,14 @@ class Request
         return $this;
     }
 
-    public function getRangeDireciton()
+    public function getRangeDirection()
     {
-        return $this->rangeDireciton;
+        return $this->rangeDirection;
     }
 
-    protected function setRangeDireciton($rangeDireciton)
+    protected function setRangeDirection($rangeDirection)
     {
-        $this->rangeDireciton = $rangeDireciton;
+        $this->rangeDirection = $rangeDirection;
 
         return $this;
     }

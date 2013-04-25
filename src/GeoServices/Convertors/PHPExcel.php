@@ -26,7 +26,7 @@ class PHPExcel
                 $sheet->setCellValueByColumnAndRow(6,  $i, $request->getTownshipDirection());
                 $sheet->setCellValueByColumnAndRow(7,  $i, $request->getRangeNumber());
                 $sheet->setCellValueByColumnAndRow(8,  $i, $request->getRangeFraction());
-                $sheet->setCellValueByColumnAndRow(9,  $i, $request->getRangeDireciton());
+                $sheet->setCellValueByColumnAndRow(9,  $i, $request->getRangeDirection());
                 $sheet->setCellValueByColumnAndRow(10, $i, $request->getSection());
                 $sheet->setCellValueByColumnAndRow(11, $i, $request->getTownshipDuplicate());
             } else {
@@ -50,7 +50,7 @@ class PHPExcel
         $sheet->setCellValueByColumnAndRow(6,  $row, "Township Direction");
         $sheet->setCellValueByColumnAndRow(7,  $row, "Range Number");
         $sheet->setCellValueByColumnAndRow(8,  $row, "Range Fraction");
-        $sheet->setCellValueByColumnAndRow(9,  $row, "Range Direciton");
+        $sheet->setCellValueByColumnAndRow(9,  $row, "Range Direction");
         $sheet->setCellValueByColumnAndRow(10, $row, "Section");
         $sheet->setCellValueByColumnAndRow(11, $row, "Township Duplicate");
 
