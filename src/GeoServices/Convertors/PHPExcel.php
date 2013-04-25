@@ -8,7 +8,8 @@ class PHPExcel
 {
     public function convert($file, $startingRow=1)
     {
-        $objPHPExcel = \PHPExcel_IOFactory::load($file);
+        $objPHPExcel = $this->getPHPExcel($file);
+
         $sheet = $objPHPExcel->setActiveSheetIndex(0);
 
         $max = $sheet->getHighestRow();
@@ -33,10 +34,38 @@ class PHPExcel
             }
         }
 
+        $this->savePHPExcel($objPHPExcel);
+    }
+
+    public function addTitles($file, $row)
+    {
+        $objPHPExcel = $this->getPHPExcel($file);
+
+        $sheet = $objPHPExcel->setActiveSheetIndex(0);
+
+        $sheet->setCellValueByColumnAndRow(2,  $row, "State");
+        $sheet->setCellValueByColumnAndRow(3,  $row, "Principal Meridian");
+        $sheet->setCellValueByColumnAndRow(4,  $row, "Township Number");
+        $sheet->setCellValueByColumnAndRow(5,  $row, "Township Fraction");
+        $sheet->setCellValueByColumnAndRow(6,  $row, "Township Direction");
+        $sheet->setCellValueByColumnAndRow(7,  $row, "Range Number");
+        $sheet->setCellValueByColumnAndRow(8,  $row, "Range Fraction");
+        $sheet->setCellValueByColumnAndRow(9,  $row, "Range Direciton");
+        $sheet->setCellValueByColumnAndRow(10, $row, "Section");
+        $sheet->setCellValueByColumnAndRow(11, $row, "Township Duplicate");
+
+        $this->savePHPExcel($objPHPExcel);
+    }
+
+    protected function getPHPExcel($file)
+    {
+        return \PHPExcel_IOFactory::load($file);
+    }
+
+    protected function savePHPExcel($objPHPExcel)
+    {
         // TODO generic writer based on file type
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
-        $objWriter->save($file);
-
-        return $file;
+        return $objWriter->save($file);
     }
 }
