@@ -34,7 +34,7 @@ class PHPExcel
             }
         }
 
-        $this->savePHPExcel($objPHPExcel);
+        $this->savePHPExcel($objPHPExcel, $file);
     }
 
     public function addTitles($file, $row)
@@ -54,7 +54,7 @@ class PHPExcel
         $sheet->setCellValueByColumnAndRow(10, $row, "Section");
         $sheet->setCellValueByColumnAndRow(11, $row, "Township Duplicate");
 
-        $this->savePHPExcel($objPHPExcel);
+        $this->savePHPExcel($objPHPExcel, $file);
     }
 
     protected function getPHPExcel($file)
@@ -62,7 +62,7 @@ class PHPExcel
         return \PHPExcel_IOFactory::load($file);
     }
 
-    protected function savePHPExcel($objPHPExcel)
+    protected function savePHPExcel($objPHPExcel, $file)
     {
         // TODO generic writer based on file type
         $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
